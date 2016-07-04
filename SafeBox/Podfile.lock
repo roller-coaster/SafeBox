@@ -1,0 +1,22 @@
+PODS:
+  - DZNEmptyDataSet (1.8)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - TZImagePickerController (1.3.3)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - FMDB (= 2.5)
+  - TZImagePickerController (= 1.3.3)
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  TZImagePickerController: 54bda7300010b49a85f97672a20f52b1381c967b
+
+PODFILE CHECKSUM: 7a61cd216f4774521110a1579d76225ef82aa8ea
+
+COCOAPODS: 1.0.0

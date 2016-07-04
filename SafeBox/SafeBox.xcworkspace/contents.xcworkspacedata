@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SafeBox/SafeBox.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SafeBoxBusinessLogicLayer/SafeBoxBusinessLogicLayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SafeBoxPersistenceLayer/SafeBoxPersistenceLayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UtilityLayer/UtilityLayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

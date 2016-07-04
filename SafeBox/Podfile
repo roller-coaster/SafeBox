@@ -1,0 +1,13 @@
+xcodeproj 'SafeBox/SafeBox.xcodeproj'
+
+target 'SafeBox' do
+
+
+pod 'FMDB' , '2.5'
+
+pod 'TZImagePickerController' , '1.3.3'
+
+ 
+pod 'DZNEmptyDataSet'
+
+end

@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  SafeBox
+//
+//  Created by 丁嘉睿 on 16/5/18.
+//  Copyright © 2016年 Mr.D. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+/** 常用宏定义 */
+
+/** 当前document路径 */
+#define DOCUMENT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]
+
+#import "ZXBasicVC.h"
+#import "ZXBasicVC+Navi.h"
+#import "ZXNavController.h"
+
+
+
+#import "GlobalConstants.h"
+#import "GlobalHeader.h"
+
+/** category */
+/** --- 指纹解锁 --- */
+#import "ValidationFingerprint.h"
+
+/** 业务层 */
+#import "BusinessHeader.h"
+/** 工具层 */
+#import "UtilityHeader.h"
+
+/** --------- 头文件 ---------- */
+#import "FileNameTypeHeader.h"
+
+/** -----pod------- */
+#import "UIScrollView+EmptyDataSet.h"
+#endif /* PrefixHeader_pch */
