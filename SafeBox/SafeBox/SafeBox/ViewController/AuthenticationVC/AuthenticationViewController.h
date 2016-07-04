@@ -10,4 +10,6 @@
 
 @interface AuthenticationViewController : ZXBasicVC
 
+@property (nonatomic, copy) void (^dismissBlock) (BOOL dismiss);
+
 @end

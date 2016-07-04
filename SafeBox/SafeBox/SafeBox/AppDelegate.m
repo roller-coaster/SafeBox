@@ -24,9 +24,7 @@
     [FileUtility createFileWithName:FILE_NAME_VIDEO];
     [FileUtility createFileWithName:FILE_NAME_PHOTOS];
     [FileUtility createFileWithName:FILE_NAME_Archiver];
-    
-//    self.fingerView = [[FingerprintLockCustomView alloc] initWithFrame:self.window.frame];
-//    [self.window insertSubview:self.fingerView belowSubview:self.window.rootViewController.view];
+
     return YES;
 }
 

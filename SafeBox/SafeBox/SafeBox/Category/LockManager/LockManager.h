@@ -11,4 +11,5 @@
 @interface LockManager : NSObject
 
 + (void)showLockViewWithController:(UIViewController *)controller;
+
 @end

@@ -19,6 +19,7 @@
 #import "CustomVideoShowView.h"
 #import "RecordingVideoViewController.h" //!<录制视频
 
+#import "AuthenticationViewController.h"
 #define LEFT_BUTTON_TEXT @"相册"
 #define BUTTON_FONT 15.0f
 
@@ -47,7 +48,15 @@ typedef void(^didSelectCellBlock)(void);
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:37.0/255.0 green:130.0/255.0 blue:223.0/255.0 alpha:1.0f];
 
-    // Do any additional setup after loading the view, typically from a nib.
+    if (![UserInfoDAO sharedInstance].infoModel) {
+        AuthenticationViewController *AuthenticationVC = [[AuthenticationViewController alloc] init];
+        AuthenticationVC.dismissBlock = ^(BOOL dismiss){
+            if (!dismiss) {
+                [self popToVCWithClassName:[MViewController class] animated:NO];
+            }  
+        };
+        [self pushVC:AuthenticationVC animated:NO];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{

@@ -39,6 +39,7 @@
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     /** 如果归档没有存储，则显示设置密码 */
@@ -56,12 +57,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 #pragma mark 内存警告
@@ -240,13 +241,6 @@
 
 #pragma mark 点击确认按钮
 - (void)clickConfirmButton{
-    UIImage *imgae = [UIImage imageNamed:@"153E7F8FF69444E9B316583A6D3F8B9F.jpg"];
-    [SaveImageToPhotos saveImageToPhotosWithImage:imgae completionBlock:^(BOOL success, NSError *error) {
-        if (success) {
-            NSLog(@"保存成功");
-        }else{
-            NSLog(@"保存失败:%@",error.localizedDescription);
-        }
-    }];
+    if (self.dismissBlock) self.dismissBlock(_pwtextField1.hidden);
 }
 @end
