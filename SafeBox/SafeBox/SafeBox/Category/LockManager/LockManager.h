@@ -12,4 +12,5 @@
 
 + (void)showLockViewWithController:(UIViewController *)controller;
 
++ (void)loadLockPasswordWithBlock:(void(^)(BOOL isFingerprint, NSString *password))block;
 @end

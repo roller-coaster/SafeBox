@@ -21,7 +21,7 @@
         }
         AuthenticationViewController *authenticationVC = [[AuthenticationViewController alloc] init];
         authenticationVC.dismissBlock = ^(BOOL dismiss){
-            if (dismiss) {
+            if (!dismiss) {
                 [LockManager dismissLockViewController:controller];
             }
         };
@@ -48,7 +48,8 @@
 + (void)loadLockPasswordWithBlock:(void(^)(BOOL isFingerprint, NSString *password))block{
     id obj = [ArchiverUtils UnarchiverObjectWithFilePath:[FILE_NAME_Archiver_PATH stringByAppendingPathComponent:ArchiverName]];
     if (obj) {
-        [UserInfoDAO sharedInstance].infoModel = (UserInfoModel *)obj;
+        UserInfoModel *model = (UserInfoModel *)obj;
+        [UserInfoDAO sharedInstance].infoModel = [[UserInfoModel alloc] initWithLoginPW:model.loginPW isNeedFingerprint:model.isFingerprint];
         if (block) block([UserInfoDAO sharedInstance].infoModel.isFingerprint, [UserInfoDAO sharedInstance].infoModel.loginPW);
     }else{
         if (block) block(NO, nil);
