@@ -54,10 +54,10 @@ typedef void(^didSelectCellBlock)(void);
         if (isFingerprint) {
             
         }else{
-            if (password.length > 0) {
+            if (password.length == 0) {
                 AuthenticationViewController *AuthenticationVC = [[AuthenticationViewController alloc] init];
                 AuthenticationVC.dismissBlock = ^(BOOL dismiss){
-                    if (dismiss) {
+                    if (!dismiss) {
                         [self popToVCWithClassName:[MViewController class] animated:NO];
                     }  
                 };

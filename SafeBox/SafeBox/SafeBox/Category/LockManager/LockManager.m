@@ -21,7 +21,7 @@
         }
         AuthenticationViewController *authenticationVC = [[AuthenticationViewController alloc] init];
         authenticationVC.dismissBlock = ^(BOOL dismiss){
-            if (!dismiss) {
+            if (dismiss) {
                 [LockManager dismissLockViewController:controller];
             }
         };
