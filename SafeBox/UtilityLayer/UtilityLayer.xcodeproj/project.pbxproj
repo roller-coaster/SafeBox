@@ -13,6 +13,7 @@
 		6658A2291CFD906500776283 /* VideoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658A2281CFD906500776283 /* VideoUtils.m */; };
 		667535A91D03EF9800868CE0 /* ArchiverUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 667535A81D03EF9800868CE0 /* ArchiverUtils.m */; };
 		667D52701CEC4D4200D612DF /* FileUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D526F1CEC4D4200D612DF /* FileUtility.m */; };
+		66CEE5E51D2F9D1200929B3B /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CEE5E41D2F9D1200929B3B /* UIImage+Size.m */; };
 		66E7049C1CFBEE3400D46414 /* CoverData.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E7049B1CFBEE3400D46414 /* CoverData.m */; };
 		66E704A71CFBF1A900D46414 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E704A61CFBF1A900D46414 /* UIView+Layer.m */; };
 		66E704AB1CFC090800D46414 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E704AA1CFC090800D46414 /* UIColor+Addition.m */; };
@@ -46,6 +47,8 @@
 		667D526A1CEC4ADE00D612DF /* UtilityHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityHeader.h; sourceTree = "<group>"; };
 		667D526E1CEC4D4200D612DF /* FileUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtility.h; sourceTree = "<group>"; };
 		667D526F1CEC4D4200D612DF /* FileUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtility.m; sourceTree = "<group>"; };
+		66CEE5E31D2F9D1200929B3B /* UIImage+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Size.h"; sourceTree = "<group>"; };
+		66CEE5E41D2F9D1200929B3B /* UIImage+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Size.m"; sourceTree = "<group>"; };
 		66D93E191CEC492E0021C458 /* libUtilityLayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtilityLayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E7049A1CFBEE3400D46414 /* CoverData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverData.h; sourceTree = "<group>"; };
 		66E7049B1CFBEE3400D46414 /* CoverData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverData.m; sourceTree = "<group>"; };
@@ -123,6 +126,15 @@
 			path = ArchiverUtils;
 			sourceTree = "<group>";
 		};
+		66CEE5E21D2F9CFC00929B3B /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				66CEE5E31D2F9D1200929B3B /* UIImage+Size.h */,
+				66CEE5E41D2F9D1200929B3B /* UIImage+Size.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		66D93E101CEC492E0021C458 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 		66E704A31CFBF18B00D46414 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				66CEE5E21D2F9CFC00929B3B /* UIImage */,
 				66E704B21CFD694900D46414 /* CGSize */,
 				66E704AE1CFC187300D46414 /* UIBarButtonItem */,
 				66E704A81CFC08E300D46414 /* UIColor */,
@@ -278,6 +291,7 @@
 				66E7049C1CFBEE3400D46414 /* CoverData.m in Sources */,
 				667D52701CEC4D4200D612DF /* FileUtility.m in Sources */,
 				66E704A71CFBF1A900D46414 /* UIView+Layer.m in Sources */,
+				66CEE5E51D2F9D1200929B3B /* UIImage+Size.m in Sources */,
 				664836AF1CF29C6100918896 /* NSDate+Common.m in Sources */,
 				66E704AB1CFC090800D46414 /* UIColor+Addition.m in Sources */,
 				6658A2291CFD906500776283 /* VideoUtils.m in Sources */,

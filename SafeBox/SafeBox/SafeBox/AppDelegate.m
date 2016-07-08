@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ZXBasicVC.h"
-#import "FingerprintLockCustomView.h"
 #import "LockManager.h"
 
 @interface AppDelegate ()

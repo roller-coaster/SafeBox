@@ -11,6 +11,8 @@
 		666AA8941D24F48C004A73F0 /* UserInfoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 666AA8931D24F48C004A73F0 /* UserInfoDAO.m */; };
 		667D52761CEC575400D612DF /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D52751CEC575400D612DF /* BaseModel.m */; };
 		667D527A1CEC580C00D612DF /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D52791CEC580C00D612DF /* UserInfoModel.m */; };
+		66CEE5DD1D2F821F00929B3B /* FileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CEE5DC1D2F821F00929B3B /* FileItem.m */; };
+		66CEE5E11D2F8CA200929B3B /* ThreadDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CEE5E01D2F8CA200929B3B /* ThreadDAO.m */; };
 		66D93DE31CEC43DA0021C458 /* libSafeBoxPersistenceLayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D93DE21CEC43DA0021C458 /* libSafeBoxPersistenceLayer.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,10 @@
 		667D52751CEC575400D612DF /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		667D52781CEC580C00D612DF /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
 		667D52791CEC580C00D612DF /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		66CEE5DB1D2F821F00929B3B /* FileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileItem.h; sourceTree = "<group>"; };
+		66CEE5DC1D2F821F00929B3B /* FileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileItem.m; sourceTree = "<group>"; };
+		66CEE5DF1D2F8CA200929B3B /* ThreadDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadDAO.h; sourceTree = "<group>"; };
+		66CEE5E01D2F8CA200929B3B /* ThreadDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadDAO.m; sourceTree = "<group>"; };
 		66D93DA71CEC42D00021C458 /* libSafeBoxBusinessLogicLayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSafeBoxBusinessLogicLayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D93DE21CEC43DA0021C458 /* libSafeBoxPersistenceLayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSafeBoxPersistenceLayer.a; path = "../../../../../Library/Developer/Xcode/DerivedData/SafeBox-bagvhyckolympvcxzssgjxbhwobk/Build/Products/Debug-iphoneos/libSafeBoxPersistenceLayer.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +61,7 @@
 		666AA88D1D24F35F004A73F0 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				66CEE5DE1D2F8C8200929B3B /* ThreadDAO */,
 				666AA8911D24F47E004A73F0 /* UserInfoDAO */,
 				666AA88E1D24F37C004A73F0 /* NSObject+OTSharedInstance.h */,
 				666AA88F1D24F37C004A73F0 /* NSObject+OTSharedInstance.m */,
@@ -74,6 +81,7 @@
 		667D52731CEC574200D612DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				66CEE5DA1D2F816A00929B3B /* FileItem */,
 				667D52771CEC576D00D612DF /* UserInfoModel */,
 				667D52741CEC575400D612DF /* BaseModel.h */,
 				667D52751CEC575400D612DF /* BaseModel.m */,
@@ -88,6 +96,24 @@
 				667D52791CEC580C00D612DF /* UserInfoModel.m */,
 			);
 			path = UserInfoModel;
+			sourceTree = "<group>";
+		};
+		66CEE5DA1D2F816A00929B3B /* FileItem */ = {
+			isa = PBXGroup;
+			children = (
+				66CEE5DB1D2F821F00929B3B /* FileItem.h */,
+				66CEE5DC1D2F821F00929B3B /* FileItem.m */,
+			);
+			path = FileItem;
+			sourceTree = "<group>";
+		};
+		66CEE5DE1D2F8C8200929B3B /* ThreadDAO */ = {
+			isa = PBXGroup;
+			children = (
+				66CEE5DF1D2F8CA200929B3B /* ThreadDAO.h */,
+				66CEE5E01D2F8CA200929B3B /* ThreadDAO.m */,
+			);
+			path = ThreadDAO;
 			sourceTree = "<group>";
 		};
 		66D93D9E1CEC42D00021C458 = {
@@ -182,7 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66CEE5DD1D2F821F00929B3B /* FileItem.m in Sources */,
 				667D527A1CEC580C00D612DF /* UserInfoModel.m in Sources */,
+				66CEE5E11D2F8CA200929B3B /* ThreadDAO.m in Sources */,
 				667D52761CEC575400D612DF /* BaseModel.m in Sources */,
 				666AA8901D24F37C004A73F0 /* NSObject+OTSharedInstance.m in Sources */,
 				666AA8941D24F48C004A73F0 /* UserInfoDAO.m in Sources */,

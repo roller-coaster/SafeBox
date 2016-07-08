@@ -33,4 +33,7 @@
 /** ------------- 颜色  --------------- */
 #import "UIColor+Addition.h"
 
+/** ------------- 压缩图片大小  --------------- */
+#import "UIImage+Size.h"
+
 #endif /* UtilityHeader_h */

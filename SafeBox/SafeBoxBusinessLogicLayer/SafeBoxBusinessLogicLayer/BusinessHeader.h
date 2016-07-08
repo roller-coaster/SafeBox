@@ -11,5 +11,8 @@
 
 #import "UserInfoModel.h"
 #import "UserInfoDAO.h"
+#import "ThreadDAO.h"
+
+#import "FileItem.h"
 
 #endif /* BusinessHeader_h */

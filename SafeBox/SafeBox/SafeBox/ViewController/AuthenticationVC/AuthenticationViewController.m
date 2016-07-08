@@ -49,7 +49,11 @@
     if ([FileUtility ergodicFolder:archPatch].count > 0) {
         self.title = @"验证密码";
         /** 验证密码 */
-        _isHave1 = NO;
+        id obj = [ArchiverUtils UnarchiverObjectWithFilePath:[FILE_NAME_Archiver_PATH stringByAppendingPathComponent:ArchiverName]];
+        [UserInfoDAO sharedInstance].infoModel = (UserInfoModel *)obj;
+        if ([UserInfoDAO sharedInstance].infoModel.loginPW.length > 0) {
+            _isHave1 = NO;
+        }
     }
     [self showTheValidationViewWithTextField:_isHave1];
     [self addTapGesture];
@@ -138,6 +142,7 @@
     
     if (!isHave) {/** 验证密码时，不需要在显示确认密码 */
         _pwtextField1.hidden = YES;
+        _promptLab.text = LABEL_TEXT;
         [UIView animateWithDuration:2.0f animations:^{
             _promptLab.center = CGPointMake(_pwtextField0.center.x, _pwtextField0.center.y + TEXTFIELD_HEIGHT);
             _confirmBtn.frame = CGRectMake(CGRectGetMinX(_pwtextField0.frame), CGRectGetMaxY(_promptLab.frame) + 20, CGRectGetWidth(_pwtextField0.frame), CGRectGetHeight(_pwtextField0.frame));
@@ -212,6 +217,7 @@
                 _confirmBtn.hidden = NO;
                 if ([self validationPasswordWithPassword:_pwtextField0.text]) {
                     _promptLab.hidden = YES;
+                    _confirmBtn.enabled = YES;
                 }else{
                     _confirmBtn.enabled = NO;
                     _promptLab.text = LABLE_PROMPT_TEXT2;
@@ -231,8 +237,6 @@
 #pragma mark 验证密码
 - (BOOL)validationPasswordWithPassword:(NSString *)password{
     BOOL isYES = NO;
-    id obj = [ArchiverUtils UnarchiverObjectWithFilePath:[FILE_NAME_Archiver_PATH stringByAppendingPathComponent:ArchiverName]];
-    [UserInfoDAO sharedInstance].infoModel = (UserInfoModel *)obj;
     if ([password isEqualToString:[UserInfoDAO sharedInstance].infoModel.loginPW]) {
         isYES = YES;
     }

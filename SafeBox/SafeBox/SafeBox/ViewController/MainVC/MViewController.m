@@ -14,14 +14,15 @@
 #import "CreateFileViewController.h" //!<创建文件夹界面
 #import <Photos/Photos.h>
 #import "TZImageManager.h"
-#import "ShowPhotosViewController.h" //!<展示图片界面
 
-#import "CustomVideoShowView.h"
 #import "RecordingVideoViewController.h" //!<录制视频
 
 #import "AuthenticationViewController.h"
 
 #import "LockManager.h"
+
+#import "ShowManagerViewController.h"
+
 #define LEFT_BUTTON_TEXT @"相册"
 #define BUTTON_FONT 15.0f
 
@@ -51,19 +52,13 @@ typedef void(^didSelectCellBlock)(void);
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:37.0/255.0 green:130.0/255.0 blue:223.0/255.0 alpha:1.0f];
 
     [LockManager loadLockPasswordWithBlock:^(BOOL isFingerprint, NSString *password) {
-        if (isFingerprint) {
-            
-        }else{
-            if (password.length == 0) {
-                AuthenticationViewController *AuthenticationVC = [[AuthenticationViewController alloc] init];
-                AuthenticationVC.dismissBlock = ^(BOOL dismiss){
-                    if (!dismiss) {
-                        [self popToVCWithClassName:[MViewController class] animated:NO];
-                    }  
-                };
-                [self pushVC:AuthenticationVC animated:NO];
-            }
-        }
+        WeakSelf
+        AuthenticationViewController *AuthenticationVC = [[AuthenticationViewController alloc] init];
+        AuthenticationVC.dismissBlock = ^(BOOL dismiss){
+            if (!weakSelf) return ;
+            [self popToVCWithClassName:[MViewController class] animated:NO];
+        };
+        [self pushVC:AuthenticationVC animated:NO];
     }];
 }
 
@@ -196,19 +191,6 @@ typedef void(^didSelectCellBlock)(void);
 - (void)addFileItem{
 //    CreateFileViewController *CFVC = [[CreateFileViewController alloc] init];
 //    [self pushVC:CFVC];
-    CustomVideoShowView *videoView = [[CustomVideoShowView alloc] initWithFrame:self.view.frame];
-    NSArray *imgs = [FileUtility ergodicFolder:FILE_NAME_PHOTOS_PATH];
-    for (NSString *path in imgs) {
-        if ([path hasSuffix:@"JPG"] || [path hasSuffix:@"png"] || [path hasSuffix:@"PNG"]) {
-            [videoView.dataSourceArr addObject:path];
-        }
-    }
-    [UIView animateWithDuration:2.0 animations:^{
-        
-    } completion:^(BOOL finished) {
-        videoView.itemSize = CGSizeMake(110, 80);
-        [self.view addSubview:videoView];
-    }];
 }
 #pragma mark 设置
 - (void)settings{
@@ -225,9 +207,12 @@ typedef void(^didSelectCellBlock)(void);
             NSDictionary *dict = infos[i];
             NSString *name = [[dict objectForKey:@"PHImageFileURLKey"] lastPathComponent];
             NSString *imagePath = [FILE_NAME_PHOTOS_PATH stringByAppendingPathComponent:name];
-            if ([FileUtility fileExist:imagePath]) return;
-            [UIImageJPEGRepresentation(photos[i], .75) writeToFile:imagePath atomically:YES];
-            [weakSelf setDataSource];
+            if (![FileUtility fileExist:imagePath]) {
+                [UIImageJPEGRepresentation(photos[i], .75) writeToFile:imagePath atomically:YES];
+                [weakSelf setDataSource];
+            }else{
+                continue;
+            }
         }
     };
     imaegVC.didFinishPickingVideoHandle = ^(UIImage *coverImage,id asset){
@@ -271,7 +256,7 @@ typedef void(^didSelectCellBlock)(void);
 - (void)setDataSource{
     self.dataSourceArray = [NSMutableArray array];
     
-    NSArray *fileArr = [FileUtility findFile:[FileUtility documentPath]];  
+//    NSArray *fileArr = [FileUtility findFile:[FileUtility documentPath]];  
     
     NSArray *allFiles = [FileUtility ergodicFolder:DOCUMENT_PATH];
 
@@ -292,7 +277,9 @@ typedef void(^didSelectCellBlock)(void);
     
     /** 视频 */
     didSelectCellBlock videosBlock = ^{
-        
+        ShowManagerViewController *showManagerVC = [[ShowManagerViewController alloc] init];
+        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_VIDEO_PATH];
+        [weakSelf pushVC:showManagerVC animated:YES];
     };
     NSInteger videos = array.count;
     NSNumber *videosNum = [[NSNumber alloc] initWithInteger:videos];
@@ -300,9 +287,9 @@ typedef void(^didSelectCellBlock)(void);
     
     /** 照片 */
     didSelectCellBlock photoslock = ^{
-        ShowPhotosViewController *photosVC = [[ShowPhotosViewController alloc] init];
-        photosVC.title = FILE_NAME_PHOTOS;
-        [weakSelf pushVC:photosVC];
+        ShowManagerViewController *showManagerVC = [[ShowManagerViewController alloc] init];
+        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_PHOTOS_PATH];
+        [weakSelf pushVC:showManagerVC animated:YES];
     };
     NSInteger photos = imgs.count;
     NSNumber *photosNum = [[NSNumber alloc] initWithInteger:photos];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZXNavController.h"
 
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 
 /** 传递vc block */
