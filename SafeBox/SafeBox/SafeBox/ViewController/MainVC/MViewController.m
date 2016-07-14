@@ -278,7 +278,7 @@ typedef void(^didSelectCellBlock)(void);
     /** 视频 */
     didSelectCellBlock videosBlock = ^{
         ShowManagerViewController *showManagerVC = [[ShowManagerViewController alloc] init];
-        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_VIDEO_PATH];
+        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_VIDEO_PATH isVideo:YES];
         [weakSelf pushVC:showManagerVC animated:YES];
     };
     NSInteger videos = array.count;
@@ -288,7 +288,7 @@ typedef void(^didSelectCellBlock)(void);
     /** 照片 */
     didSelectCellBlock photoslock = ^{
         ShowManagerViewController *showManagerVC = [[ShowManagerViewController alloc] init];
-        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_PHOTOS_PATH];
+        [showManagerVC setShowManagerCollectionViewControllerWithFilePath:FILE_NAME_PHOTOS_PATH isVideo:NO];
         [weakSelf pushVC:showManagerVC animated:YES];
     };
     NSInteger photos = imgs.count;

@@ -10,5 +10,5 @@
 
 @interface ShowManagerViewController : MyCollectionViewController
 
-- (void)setShowManagerCollectionViewControllerWithFilePath:(NSString *)path;
+- (void)setShowManagerCollectionViewControllerWithFilePath:(NSString *)path isVideo:(BOOL)isYES;
 @end

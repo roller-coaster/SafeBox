@@ -7,7 +7,8 @@
 //
 
 #import "ShowManagerViewController.h"
-#import "ShowManagerCollectionViewCell.h"
+#import "ShowManagerCollectionViewCell.h" ///!cell
+#import "VideoPlayViewController.h" ///!视频播放界面
 
 #define PROMPT_TEXT @"无照片或视频"
 
@@ -36,6 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    NSLog(@"ShowManagerViewController释放");
+}
 #pragma mark - UICollectionViewDataSource Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _dataArray.count;
@@ -78,6 +82,34 @@
     return UIEdgeInsetsMake(5, 5, 0, 5);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    FileItem *item = _dataArray[indexPath.row];
+    switch (item.fileType) {
+        case FileType_photo:
+        {
+
+        }
+            break;
+        case FileType_video:
+        {
+            NSString *videoPtah = item.filePath;
+            if ([videoPtah isKindOfClass:[NSString class]]) {
+                VideoPlayViewController *videoPlayerVC = [[VideoPlayViewController alloc] init];
+                videoPlayerVC.videoPath = videoPtah;
+                videoPlayerVC.removeVideoPlayerVCBlock = ^(VideoPlayViewController *target){
+                    [target dismissVC:YES];
+                };
+                [self presentVC:videoPlayerVC animated:YES];
+            }else{
+                
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - DZNEmptyDataSetSource
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
@@ -114,23 +146,28 @@
 }
 
 #pragma mark - Public Methods
-- (void)setShowManagerCollectionViewControllerWithFilePath:(NSString *)path{
+- (void)setShowManagerCollectionViewControllerWithFilePath:(NSString *)path isVideo:(BOOL)isYES{
     _dataArray = [NSMutableArray array];
     WeakSelf
     if (path.length == 0) return;
     self.title = @"文件预览";
     [ThreadDAO executeInGlobalQueue:^{
         if (!weakSelf) return ;
-        NSArray *files = [FileUtility ergodicFolder:path];
+        NSArray *files = [FileUtility ergodicFolder:path];            
         for (NSString *path in files) {
-            if ([FileItem analyseFileType:path] == FileType_photo) {
-                weakSelf.title = @"图片预览";
-                FileImageItem *imageItem = [[FileImageItem alloc] initWithFilePath:path];
-                [weakSelf.dataArray addObject:imageItem];
-            }else if ([FileItem analyseFileType:path] == FileType_video){
+            if (isYES) {
                 weakSelf.title = @"视频预览";
-                FileItem *item = [[FileItem alloc] initWithFilePath:path];
-                [weakSelf.dataArray addObject:item];
+                if ([FileItem analyseFileType:path] == FileType_video){
+                    FileItem *item = [[FileItem alloc] initWithFilePath:path];
+                    [weakSelf.dataArray addObject:item];
+                }
+
+            }else{
+                weakSelf.title = @"图片预览";
+                if ([FileItem analyseFileType:path] == FileType_photo) {
+                    FileImageItem *imageItem = [[FileImageItem alloc] initWithFilePath:path];
+                    [weakSelf.dataArray addObject:imageItem];
+                } 
             }
         }
         [ThreadDAO executeInMainQueue:^{

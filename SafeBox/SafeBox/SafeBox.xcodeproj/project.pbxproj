@@ -16,6 +16,7 @@
 		664836FB1CF2D8FF00918896 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836F61CF2D8FF00918896 /* MJRefreshFooterView.m */; };
 		664836FC1CF2D8FF00918896 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836F81CF2D8FF00918896 /* MJRefreshHeaderView.m */; };
 		6658A22B1CFD94B700776283 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6658A22A1CFD94B700776283 /* AVFoundation.framework */; };
+		6662D7361D332C58009C082C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6662D7351D332C58009C082C /* MediaPlayer.framework */; };
 		666AA8981D24F8C2004A73F0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666AA8971D24F8C2004A73F0 /* AuthenticationViewController.m */; };
 		666AA89C1D25237D004A73F0 /* LockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 666AA89B1D25237D004A73F0 /* LockManager.m */; };
 		667535B41D05062900868CE0 /* ZXBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 667535B11D05062900868CE0 /* ZXBasicVC.m */; };
@@ -32,6 +33,7 @@
 		667D527F1CEC70F200D612DF /* GlobalConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D527E1CEC70F200D612DF /* GlobalConstants.m */; };
 		668071EA1D1927E400288A08 /* RecordingVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668071E91D1927E400288A08 /* RecordingVideoViewController.m */; };
 		669E8A861CF3588500AB9FA0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669E8A851CF3588500AB9FA0 /* SettingsViewController.m */; };
+		66AF0A551D2FB2470001E51E /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF0A541D2FB2470001E51E /* VideoPlayViewController.m */; };
 		66BE3D641D0125BA00598F03 /* ValidationFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE3D631D0125BA00598F03 /* ValidationFingerprint.m */; };
 		66BE3D661D0125D100598F03 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BE3D651D0125D100598F03 /* LocalAuthentication.framework */; };
 		66CEE5CE1D2F774900929B3B /* ShowManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CEE5CC1D2F774900929B3B /* ShowManagerViewController.m */; };
@@ -79,6 +81,7 @@
 		664836F71CF2D8FF00918896 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
 		664836F81CF2D8FF00918896 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		6658A22A1CFD94B700776283 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6662D7351D332C58009C082C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		666AA8961D24F8C2004A73F0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		666AA8971D24F8C2004A73F0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		666AA89A1D25237D004A73F0 /* LockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockManager.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 		668071E91D1927E400288A08 /* RecordingVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingVideoViewController.m; sourceTree = "<group>"; };
 		669E8A841CF3588500AB9FA0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		669E8A851CF3588500AB9FA0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		66AF0A531D2FB2470001E51E /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
+		66AF0A541D2FB2470001E51E /* VideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayViewController.m; sourceTree = "<group>"; };
 		66BE3D621D0125BA00598F03 /* ValidationFingerprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidationFingerprint.h; sourceTree = "<group>"; };
 		66BE3D631D0125BA00598F03 /* ValidationFingerprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidationFingerprint.m; sourceTree = "<group>"; };
 		66BE3D651D0125D100598F03 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -150,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6662D7361D332C58009C082C /* MediaPlayer.framework in Frameworks */,
 				66D1C9791D290BF900257757 /* UIKit.framework in Frameworks */,
 				66BE3D661D0125D100598F03 /* LocalAuthentication.framework in Frameworks */,
 				6658A22B1CFD94B700776283 /* AVFoundation.framework in Frameworks */,
@@ -410,6 +416,15 @@
 			path = RecordingVideoVC;
 			sourceTree = "<group>";
 		};
+		66AF0A521D2FB2320001E51E /* VideoPlayVC */ = {
+			isa = PBXGroup;
+			children = (
+				66AF0A531D2FB2470001E51E /* VideoPlayViewController.h */,
+				66AF0A541D2FB2470001E51E /* VideoPlayViewController.m */,
+			);
+			path = VideoPlayVC;
+			sourceTree = "<group>";
+		};
 		66BE3D601D0125A400598F03 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +455,7 @@
 		66CEE5CA1D2F770B00929B3B /* ShowManagerVC */ = {
 			isa = PBXGroup;
 			children = (
+				66AF0A521D2FB2320001E51E /* VideoPlayVC */,
 				66CEE5CB1D2F774900929B3B /* ShowManagerViewController.h */,
 				66CEE5CC1D2F774900929B3B /* ShowManagerViewController.m */,
 			);
@@ -554,6 +570,7 @@
 		D89CB999CA8301FFAEFFAC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6662D7351D332C58009C082C /* MediaPlayer.framework */,
 				66D1C9781D290BF900257757 /* UIKit.framework */,
 				66BE3D651D0125D100598F03 /* LocalAuthentication.framework */,
 				6658A22A1CFD94B700776283 /* AVFoundation.framework */,
@@ -702,6 +719,7 @@
 				664836D81CF2D33200918896 /* MViewController.m in Sources */,
 				664836EF1CF2D87D00918896 /* MyTableViewController.m in Sources */,
 				66E704B91CFD71F800D46414 /* PhotosCollectionViewController.m in Sources */,
+				66AF0A551D2FB2470001E51E /* VideoPlayViewController.m in Sources */,
 				664836FC1CF2D8FF00918896 /* MJRefreshHeaderView.m in Sources */,
 				66D93DF61CEC44EC0021C458 /* AppDelegate.m in Sources */,
 				664836FB1CF2D8FF00918896 /* MJRefreshFooterView.m in Sources */,

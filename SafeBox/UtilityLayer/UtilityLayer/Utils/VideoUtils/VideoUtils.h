@@ -19,6 +19,7 @@
  */
 + (UIImage *)thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;
 
+
 /**
  *  @author djr
  *  
