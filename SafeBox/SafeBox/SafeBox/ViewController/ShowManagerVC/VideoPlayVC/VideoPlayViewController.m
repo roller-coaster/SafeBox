@@ -54,12 +54,14 @@
     [self createSlider];
     //创建播放时间
     [self createCurrentTimeLabel];
+    
+    [self createPlayButton];
 }
 - (void)dealloc{
+    NSLog(@"VideoPlayViewController释放");
     [_player pause];
     //移除通知
     [self removeNotification];
-    NSLog(@"VideoPlayViewController释放");
 }
 #pragma mark - 内存警告
 - (void)didReceiveMemoryWarning {
@@ -85,7 +87,7 @@
     
     /** 底部View */
     _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - BOTTOMVIEW_HEIGHT, SCREEN_WIDTH, BOTTOMVIEW_HEIGHT)];
-    _bottomView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.6f];
+    _bottomView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.9f];
     [self.view addSubview:_bottomView];
     
 }
@@ -108,7 +110,38 @@
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(Stack) userInfo:nil repeats:YES];
 }
 
-#pragma mark - 创建UISlider
+#pragma mark 创建播放按钮
+- (void)createPlayButton{
+    _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _playButton.frame = CGRectMake(10, 5, 39, 39);
+    if (_player.rate == 1.0) {
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_pause"] forState:UIControlStateNormal];
+    } else {
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_noplay"] forState:UIControlStateNormal];
+    }
+    [_playButton addTarget:self action:@selector(startAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomView addSubview:_playButton];
+    
+}
+
+#pragma mark 播放暂停按钮方法
+- (void)startAction:(UIButton *)button
+{
+    if (button.selected) {
+        [_player play];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_pause"] forState:UIControlStateNormal];
+        
+    } else {
+        [_player pause];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_noplay"] forState:UIControlStateNormal];
+        
+    }
+    button.selected =!button.selected;
+    
+}
+
+
+#pragma mark 创建UISlider
 - (void)createSlider
 {
     _slider = [[UISlider alloc]initWithFrame:CGRectMake(60, 10,( SCREEN_WIDTH -60)* 0.75, 15)];
@@ -125,8 +158,6 @@
 
 #pragma mark slider按住事件
 - (void)TouchUpInside:(UISlider *)slider{
-    NSLog(@"解锁了");
-//    [_player pause];
     _timer.fireDate = [NSDate distantFuture];
 }
 #pragma mark slider滑动事件
@@ -149,10 +180,13 @@
         CMTime dragedCMTime = CMTimeMake(dragedSeconds, 1);
         
         
+        WeakSelf;
         [_player seekToTime:dragedCMTime completionHandler:^(BOOL finish){
-            [_player play];
-            _timer.fireDate = [NSDate distantPast];
-
+            if (!weakSelf) return ;
+            [weakSelf.player play];
+            weakSelf.timer.fireDate = [NSDate distantPast];
+            weakSelf.playButton.selected = NO;
+            [weakSelf.playButton setBackgroundImage:[UIImage imageNamed:@"video_pause"] forState:UIControlStateNormal];
         }];
         
     }
@@ -176,7 +210,7 @@
 }
 
 
-#pragma mark - 创建手势
+#pragma mark 创建手势
 - (void)createGesture
 {
     UITapGestureRecognizer *backtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backtapAction:)];
@@ -205,11 +239,15 @@
         _currentTimeLabel.frame = CGRectMake(_currentTimeLabel.frame.origin.x, _currentTimeLabel.frame.origin.y, size.width, size.height);
     }    
 }
-#pragma mark - 返回方法
+
+
+#pragma mark 返回方法
 -(void)backtapAction:(UITapGestureRecognizer *)backtap
 {
     [_player pause];
     _timer.fireDate = [NSDate distantFuture];
+    [_timer invalidate]; 
+    _timer = nil;
     if (self.removeVideoPlayerVCBlock) self.removeVideoPlayerVCBlock(self);
 }
 

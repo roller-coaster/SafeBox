@@ -17,7 +17,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k8K-SG-UG6">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="miv-62-9e2">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_playe" translatesAutoresizingMaskIntoConstraints="NO" id="miv-62-9e2">
                         <rect key="frame" x="30" y="30" width="40" height="40"/>
                     </imageView>
                 </subviews>
@@ -41,6 +41,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="play" width="85" height="85"/>
+        <image name="video_playe" width="70" height="70"/>
     </resources>
 </document>
