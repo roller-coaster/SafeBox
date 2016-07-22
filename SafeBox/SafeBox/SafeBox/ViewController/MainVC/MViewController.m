@@ -23,6 +23,9 @@
 
 #import "ShowManagerViewController.h"
 
+
+#import "DemoViewController1.h"
+
 #define LEFT_BUTTON_TEXT @"相册"
 #define BUTTON_FONT 15.0f
 
@@ -269,7 +272,8 @@ typedef void(^didSelectCellBlock)(void);
     
     /** 所有文件 */
     didSelectCellBlock allBlock = ^{
-        
+        DemoViewController1 *demo1VC = [[DemoViewController1 alloc] init];
+        [weakSelf pushVC:demo1VC animated:YES];
     };
     NSInteger all = allFiles.count;
     NSNumber *allNum = [[NSNumber alloc] initWithInteger:all];

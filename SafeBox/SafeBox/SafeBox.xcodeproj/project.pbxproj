@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66178FA61D3C89F800528D2C /* DemoViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 66178FA51D3C89F800528D2C /* DemoViewController1.m */; };
+		66178FB01D3CA61000528D2C /* CustomButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66178FAE1D3CA61000528D2C /* CustomButtonTableViewCell.m */; };
+		66178FB11D3CA61000528D2C /* CustomButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66178FAF1D3CA61000528D2C /* CustomButtonTableViewCell.xib */; };
 		6641C61B1CFFFFD600198B07 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6641C61A1CFFFFD600198B07 /* MyCollectionViewController.m */; };
 		664836D81CF2D33200918896 /* MViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836D71CF2D33200918896 /* MViewController.m */; };
 		664836DD1CF2D34F00918896 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836DC1CF2D34F00918896 /* KxMenu.m */; };
@@ -63,6 +66,11 @@
 /* Begin PBXFileReference section */
 		5C274D163628F2C66D9C6EF0 /* Pods-SafeBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeBox.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SafeBox/Pods-SafeBox.debug.xcconfig"; sourceTree = "<group>"; };
 		5CD7F08B1D4A07CAAC4D5B8A /* libPods-SafeBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66178FA41D3C89F800528D2C /* DemoViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController1.h; sourceTree = "<group>"; };
+		66178FA51D3C89F800528D2C /* DemoViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController1.m; sourceTree = "<group>"; };
+		66178FAD1D3CA61000528D2C /* CustomButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButtonTableViewCell.h; sourceTree = "<group>"; };
+		66178FAE1D3CA61000528D2C /* CustomButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButtonTableViewCell.m; sourceTree = "<group>"; };
+		66178FAF1D3CA61000528D2C /* CustomButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonTableViewCell.xib; sourceTree = "<group>"; };
 		6641C6191CFFFFD600198B07 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		6641C61A1CFFFFD600198B07 /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		664836C81CF2CF7400918896 /* ImageNameHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageNameHeader.h; sourceTree = "<group>"; };
@@ -172,6 +180,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66178FA31D3C899600528D2C /* DemoVC */ = {
+			isa = PBXGroup;
+			children = (
+				66178FA41D3C89F800528D2C /* DemoViewController1.h */,
+				66178FA51D3C89F800528D2C /* DemoViewController1.m */,
+			);
+			path = DemoVC;
+			sourceTree = "<group>";
+		};
+		66178FAC1D3CA61000528D2C /* DemoCell */ = {
+			isa = PBXGroup;
+			children = (
+				66178FAD1D3CA61000528D2C /* CustomButtonTableViewCell.h */,
+				66178FAE1D3CA61000528D2C /* CustomButtonTableViewCell.m */,
+				66178FAF1D3CA61000528D2C /* CustomButtonTableViewCell.xib */,
+			);
+			path = DemoCell;
+			sourceTree = "<group>";
+		};
 		6641C6181CFFFFB900198B07 /* MyCollectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +211,7 @@
 		664836B11CF2A53700918896 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				66178FA31D3C899600528D2C /* DemoVC */,
 				66CEE5CA1D2F770B00929B3B /* ShowManagerVC */,
 				666AA8951D24F8A3004A73F0 /* AuthenticationVC */,
 				668071E71D1927C000288A08 /* RecordingVideoVC */,
@@ -267,6 +295,7 @@
 		664836DF1CF2D85700918896 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				66178FAC1D3CA61000528D2C /* DemoCell */,
 				66CEE5D01D2F795F00929B3B /* ShowManagerCell */,
 				667535BC1D06A0D800868CE0 /* BaseVCCell */,
 			);
@@ -648,6 +677,7 @@
 				66D1C97B1D29101800257757 /* 12.png in Resources */,
 				667535D21D06A0D800868CE0 /* MyCollectionViewCell.xib in Resources */,
 				66D1C97D1D29F6B100257757 /* join@2x.png in Resources */,
+				66178FB11D3CA61000528D2C /* CustomButtonTableViewCell.xib in Resources */,
 				66D93E011CEC44EC0021C458 /* LaunchScreen.storyboard in Resources */,
 				664836F91CF2D8FF00918896 /* MJRefresh.bundle in Resources */,
 				66E704A21CFBF02C00D46414 /* CreateFileViewController.xib in Resources */,
@@ -717,6 +747,7 @@
 			files = (
 				666AA89C1D25237D004A73F0 /* LockManager.m in Sources */,
 				664836D81CF2D33200918896 /* MViewController.m in Sources */,
+				66178FB01D3CA61000528D2C /* CustomButtonTableViewCell.m in Sources */,
 				664836EF1CF2D87D00918896 /* MyTableViewController.m in Sources */,
 				66E704B91CFD71F800D46414 /* PhotosCollectionViewController.m in Sources */,
 				66AF0A551D2FB2470001E51E /* VideoPlayViewController.m in Sources */,
@@ -733,6 +764,7 @@
 				667535B41D05062900868CE0 /* ZXBasicVC.m in Sources */,
 				664836FA1CF2D8FF00918896 /* MJRefreshBaseView.m in Sources */,
 				668071EA1D1927E400288A08 /* RecordingVideoViewController.m in Sources */,
+				66178FA61D3C89F800528D2C /* DemoViewController1.m in Sources */,
 				66CEE5CE1D2F774900929B3B /* ShowManagerViewController.m in Sources */,
 				667535B81D05063100868CE0 /* ZXNavController.m in Sources */,
 				664836DD1CF2D34F00918896 /* KxMenu.m in Sources */,
