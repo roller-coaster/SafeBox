@@ -16,7 +16,7 @@
     if (content.length == 0 && font == nil){
         return size;
     }else{
-        if (IOS7_OR_LATER) {
+        if (iOS7Later) {
             size = [content sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil]];
         }else{
             NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:content attributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil]];

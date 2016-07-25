@@ -26,6 +26,9 @@
 
 #import "DemoViewController1.h"
 
+#import "SaveImageToPhotos.h"
+
+
 #define LEFT_BUTTON_TEXT @"相册"
 #define BUTTON_FONT 15.0f
 
@@ -197,8 +200,13 @@ typedef void(^didSelectCellBlock)(void);
 }
 #pragma mark 设置
 - (void)settings{
-    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
-    [self pushVC:settingsVC];
+//    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+//    [self pushVC:settingsVC];
+    [SaveImageToPhotos saveImageToCustomPhotosAlbumWithTitle:@"nbbq" image:[UIImage imageNamed:@"join@2x.png"] complete:^(id asset) {
+        
+    } failer:^(NSError *error) {
+        
+    }];
 }
 #pragma mark 点击相册按钮事件
 - (IBAction)selectPhotosAction:(id)sender {

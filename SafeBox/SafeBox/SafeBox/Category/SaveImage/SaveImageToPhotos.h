@@ -20,4 +20,17 @@
 
 + (void)saveImageToPhotosWithImage:(UIImage *)saveImg completionBlock:(void(^)(BOOL success, NSError *error))completionBlock;
 
+
+/**
+ *  @author djr
+ *  
+ *  创建相册
+ *  @param title 相册名称
+ *  @param complete 成功
+ *  @param faile 失败
+ */
++ (void)createCustomAlbumWithTitle:(NSString *)title complete:(void (^)(id))complete faile:(void (^)())faile;
+
+
++ (void)saveImageToCustomPhotosAlbumWithTitle:(NSString *)title image:(UIImage *)saveImage complete:(void (^)(id))complete failer:(void (^)(NSError *))failer;
 @end

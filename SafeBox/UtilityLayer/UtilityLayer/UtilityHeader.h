@@ -11,9 +11,10 @@
 
 //! 系统版本
 #define NLSystemVersionGreaterOrEqualThan(version) ([[[UIDevice currentDevice] systemVersion] floatValue] >= version)
-#define IOS7_OR_LATER NLSystemVersionGreaterOrEqualThan(7.0)
-#define IOS8_OR_LATER NLSystemVersionGreaterOrEqualThan(8.0)
-#define IOS9_OR_LATER NLSystemVersionGreaterOrEqualThan(9.0)
+#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+#define iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+#define iOS9_1Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.1f)
 
 /** --------------- 归档 ------------- */
 #import "ArchiverUtils.h"
