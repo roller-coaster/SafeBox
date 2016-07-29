@@ -7,15 +7,14 @@
 //
 
 #import "BaseModel.h"
+#import "UserPasswordModel.h"
 
 @interface UserInfoModel : BaseModel
 
 /** 登陆密码 */
 @property (nonatomic, copy) NSString *loginPW;
 
-/** 是否指纹解锁 */
-@property (nonatomic, assign) BOOL isFingerprint;
-
-- (instancetype)initWithLoginPW:(NSString *)password isNeedFingerprint:(BOOL)isNeed;
+@property (strong ,nonatomic) UserPasswordModel *pwModel;
 
 @end
+

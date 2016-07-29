@@ -9,10 +9,13 @@
 #ifndef BusinessHeader_h
 #define BusinessHeader_h
 
+/** ------ model ----------- */
 #import "UserInfoModel.h"
+#import "UserPasswordModel.h"
+#import "FileItem.h"
+
 #import "UserInfoDAO.h"
 #import "ThreadDAO.h"
 
-#import "FileItem.h"
 
 #endif /* BusinessHeader_h */

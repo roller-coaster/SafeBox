@@ -7,14 +7,12 @@
 //
 
 #import "UserInfoModel.h"
+#import <Foundation/Foundation.h>
+#import <LocalAuthentication/LocalAuthentication.h>
+
 
 @implementation UserInfoModel
 
-- (instancetype)initWithLoginPW:(NSString *)password isNeedFingerprint:(BOOL)isNeed{
-    self = [super init];
-    if (self) {
-        _loginPW = password;
-        _isFingerprint = isNeed;
-    }return self;
-}
+
+
 @end

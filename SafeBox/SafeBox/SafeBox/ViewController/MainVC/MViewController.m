@@ -202,9 +202,7 @@ typedef void(^didSelectCellBlock)(void);
 - (void)settings{
 //    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
 //    [self pushVC:settingsVC];
-    [SaveImageToPhotos saveImageToCustomPhotosAlbumWithTitle:@"nbbq" image:[UIImage imageNamed:@"join@2x.png"] complete:^(id asset) {
-        
-    } failer:^(NSError *error) {
+    [SaveImageToPhotos saveImageToCustomPhotosAlbumWithTitle:[AppInformation appName] image:[UIImage imageNamed:@"12.png"] complete:^(id asset, NSError *error) {
         
     }];
 }

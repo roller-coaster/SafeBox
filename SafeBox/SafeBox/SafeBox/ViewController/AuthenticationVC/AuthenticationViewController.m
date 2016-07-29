@@ -229,7 +229,8 @@
 
 #pragma mark 保存到归档
 - (void)saveToArchiver{
-    UserInfoModel *infoModel = [[UserInfoModel alloc] initWithLoginPW:_pwtextField0.text isNeedFingerprint:NO];
+    UserInfoModel *infoModel = [[UserInfoModel alloc] init];
+    infoModel.loginPW = _pwtextField0.text;
     [UserInfoDAO sharedInstance].infoModel = infoModel;
     [ArchiverUtils ArchiverObject:[UserInfoDAO sharedInstance].infoModel filePath:[FILE_NAME_Archiver_PATH stringByAppendingPathComponent:ArchiverName]];
 }
