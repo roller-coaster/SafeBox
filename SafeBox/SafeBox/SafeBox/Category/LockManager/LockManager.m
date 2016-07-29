@@ -49,8 +49,8 @@
     id obj = [ArchiverUtils UnarchiverObjectWithFilePath:[FILE_NAME_Archiver_PATH stringByAppendingPathComponent:ArchiverName]];
     if (obj) {
         UserInfoModel *model = (UserInfoModel *)obj;
-        [UserInfoDAO sharedInstance].infoModel = [[UserInfoModel alloc] initWithLoginPW:model.loginPW isNeedFingerprint:model.isFingerprint];
-        if (block) block([UserInfoDAO sharedInstance].infoModel.isFingerprint, [UserInfoDAO sharedInstance].infoModel.loginPW);
+        [UserInfoDAO sharedInstance].infoModel = model;
+        if (block) block(model.pwModel.isFingerprint, [UserInfoDAO sharedInstance].infoModel.loginPW);
     }else{
         if (block) block(NO, nil);
     }

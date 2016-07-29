@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66117E791D4B03D300F48C1E /* AppInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66117E781D4B03D300F48C1E /* AppInformation.m */; };
 		664836AE1CF29C6100918896 /* NSDate+Analyse.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836A91CF29C6100918896 /* NSDate+Analyse.m */; };
 		664836AF1CF29C6100918896 /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836AB1CF29C6100918896 /* NSDate+Common.m */; };
 		664836B01CF29C6100918896 /* NSDate+Millisecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 664836AD1CF29C6100918896 /* NSDate+Millisecond.m */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66117E771D4B03D300F48C1E /* AppInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInformation.h; sourceTree = "<group>"; };
+		66117E781D4B03D300F48C1E /* AppInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInformation.m; sourceTree = "<group>"; };
 		664836A81CF29C6100918896 /* NSDate+Analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Analyse.h"; sourceTree = "<group>"; };
 		664836A91CF29C6100918896 /* NSDate+Analyse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Analyse.m"; sourceTree = "<group>"; };
 		664836AA1CF29C6100918896 /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
@@ -74,6 +77,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66117E751D4B03D300F48C1E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				66117E761D4B03D300F48C1E /* AppInformation */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		66117E761D4B03D300F48C1E /* AppInformation */ = {
+			isa = PBXGroup;
+			children = (
+				66117E771D4B03D300F48C1E /* AppInformation.h */,
+				66117E781D4B03D300F48C1E /* AppInformation.m */,
+			);
+			path = AppInformation;
+			sourceTree = "<group>";
+		};
 		664836A71CF29C6100918896 /* NSDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,7 @@
 		66D93E1B1CEC492E0021C458 /* UtilityLayer */ = {
 			isa = PBXGroup;
 			children = (
+				66117E751D4B03D300F48C1E /* Constants */,
 				66E704AC1CFC09B400D46414 /* PrefixHeader */,
 				66E704A31CFBF18B00D46414 /* Category */,
 				667D526C1CEC4D2E00D612DF /* Utils */,
@@ -291,6 +312,7 @@
 				66E7049C1CFBEE3400D46414 /* CoverData.m in Sources */,
 				667D52701CEC4D4200D612DF /* FileUtility.m in Sources */,
 				66E704A71CFBF1A900D46414 /* UIView+Layer.m in Sources */,
+				66117E791D4B03D300F48C1E /* AppInformation.m in Sources */,
 				66CEE5E51D2F9D1200929B3B /* UIImage+Size.m in Sources */,
 				664836AF1CF29C6100918896 /* NSDate+Common.m in Sources */,
 				66E704AB1CFC090800D46414 /* UIColor+Addition.m in Sources */,
